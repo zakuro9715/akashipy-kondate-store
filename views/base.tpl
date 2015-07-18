@@ -51,7 +51,7 @@
       margin: 24px 12px;
     }
     .kondate-card__title {
-      background: url('/static/akashipy.png') center center no-repeat;
+      background: url('/static/akashipy.svg') center center no-repeat;
       background-size: contain;
     }
     .kondate-card__name {
