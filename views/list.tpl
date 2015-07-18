@@ -12,8 +12,13 @@
       <div class="mdl-card__supporting-text">
         {{ menu['kcal'] }} キロカロリー
       </div>
-      <div class="kondate-card__name mdl-card__actions mdl-card--border">
-        {{ menu['name'] }}
+      <div class="kondate-card__name mdl-card__actions">
+          {{ menu['name'] }}
+      </div>
+      <div class="kondate-card__update mdl-card__actions mdl-card--border">
+        <a href="/{{ menu['id'] }}/update">
+          更新する
+        </a>
       </div>
     </div>
   </li>

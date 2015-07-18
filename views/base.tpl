@@ -48,6 +48,7 @@
 
     .kondate-card {
       width: 140px;
+      height: 300px;
       margin: 24px 12px;
     }
     .kondate-card__title {
@@ -56,6 +57,14 @@
     }
     .kondate-card__name {
       text-align: center;
+    }
+    .kondate-card__update {
+      text-align: center;
+      font-size: 13px;
+    }
+    .kondate-card__update a {
+      font-weight: bold;
+      text-decoration: none;
     }
 
     .kondate-list {
