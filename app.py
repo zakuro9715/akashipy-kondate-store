@@ -1,5 +1,7 @@
 from bottle import (
-    run, get, post, request, template, static_file, redirect, abort
+    run,
+    get, post, error,
+    request, template, static_file, redirect, abort
 )
 import db
 
@@ -10,6 +12,11 @@ def get_menu_params():
         'kcal': request.forms.kcal,
         'image_url': request.forms.image_url,
     }
+
+
+@error(404)
+def error404(e):
+    return template('error', title='Not Found')
 
 
 @get('/')

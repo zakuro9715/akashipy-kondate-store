@@ -34,6 +34,18 @@
       text-decoration: none;
     }
 
+    .error-container {
+      text-align: center;  
+    }
+    .error-container__button {
+
+    }
+    .error-container__image {
+      display: block;
+      margin: 48px auto;
+      width: 300px;
+    }
+
     .kondate-card {
       width: 140px;
       margin: 24px 12px;
