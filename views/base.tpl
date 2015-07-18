@@ -55,14 +55,14 @@
       justify-content: space-between;
     }
 
-    .new-kondate-form {
+    .kondate-form {
       width: 300px;
       margin: 0 auto;
     }
-    .new-kondate-form__row {
+    .kondate-form__row {
       margin: 32px 0;
     }
-    .new-kondate-form__submit {
+    .kondate-form__submit {
       width: 300px;
     }
   </style>

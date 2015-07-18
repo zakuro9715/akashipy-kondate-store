@@ -35,5 +35,14 @@ def create_menu(name, kcal, image_url):
     menus.insert().execute(name=name, kcal=kcal, image_url=image_url)
 
 
+def update_menu(id, name, kcal, image_url):
+    q = menus.update().where(menus.c.id == id)
+    q.execute(name=name, kcal=kcal, image_url=image_url)
+
+
+def fetch_menu(id):
+    return menus.select().where(menus.c.id == id).execute().fetchone()
+
+
 def fetch_all_menus():
     return menus.select().execute().fetchall()

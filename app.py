@@ -1,5 +1,15 @@
-from bottle import run, get, post, request, template, static_file, redirect
+from bottle import (
+    run, get, post, request, template, static_file, redirect, abort
+)
 import db
+
+
+def get_menu_params():
+    return {
+        'name': request.forms.name,
+        'kcal': request.forms.kcal,
+        'image_url': request.forms.image_url,
+    }
 
 
 @get('/')
@@ -14,11 +24,21 @@ def new_menu():
 
 @post('/new')
 def create_menu():
-    name = request.forms.name
-    kcal = request.forms.kcal
-    image_url = request.forms.image_url
+    db.create_menu(**get_menu_params())
+    redirect('/')
 
-    db.create_menu(name, kcal, image_url)
+
+@get('/<id:int>/update')
+def update_menu_form(id):
+    menu = db.fetch_menu(id)
+    if menu is None:
+        abort(404)
+    return template('update', **menu)
+
+
+@post('/<id:int>/update')
+def update_menu(id):
+    db.update_menu(id, **get_menu_params())
     redirect('/')
 
 
